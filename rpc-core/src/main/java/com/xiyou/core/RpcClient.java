@@ -13,9 +13,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 18:40:00
+ * @author xiyou
+ * RPC客户端发送请求并接受请求
+ * 对异常做特殊处理
  */
 public class RpcClient {
     public static final Logger logger = LoggerFactory.getLogger(RpcClient.class);

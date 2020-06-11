@@ -7,9 +7,11 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 19:01:00
+ * @author xiyou
+ * 客户端JDK动态代理对象
+ * 主要目的是生成每一个IService接口的Proxy对象
  */
 public class RpcClientProxy implements InvocationHandler {
     private String host;
@@ -19,8 +21,9 @@ public class RpcClientProxy implements InvocationHandler {
         this.host = host;
         this.port = port;
     }
+
     @SuppressWarnings("unchecked")
-    public <T>T getProxy(Class<T> clazz){
+    public <T> T getProxy(Class<T> clazz) {
         return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class<?>[]{clazz}, this);
     }
 
@@ -32,6 +35,6 @@ public class RpcClientProxy implements InvocationHandler {
                 .paramTypes(method.getParameterTypes())
                 .build();
         RpcClient rpcClient = new RpcClient();
-        return rpcClient.sendRpcRequest(rpcRequest,host,port);
+        return rpcClient.sendRpcRequest(rpcRequest, host, port);
     }
 }

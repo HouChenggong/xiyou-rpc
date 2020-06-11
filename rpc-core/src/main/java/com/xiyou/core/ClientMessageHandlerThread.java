@@ -15,9 +15,10 @@ import java.lang.reflect.Method;
 import java.net.ResponseCache;
 import java.net.Socket;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 09:18:00
+ * @author xiyou
+ * 服务端线程处理客户端的请求并把结果封装
  */
 public class ClientMessageHandlerThread implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(ClientMessageHandlerThread.class);

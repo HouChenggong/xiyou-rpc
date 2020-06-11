@@ -3,9 +3,9 @@ package com.xiyou.common.exception;
 
 import com.xiyou.common.enumres.RpcErrorMessageEnum;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月12日 16:48:00
+ * @author xiyou
  */
 public class RpcException extends RuntimeException {
     public RpcException(RpcErrorMessageEnum rpcErrorMessageEnum, String detail) {

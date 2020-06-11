@@ -10,9 +10,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.*;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 08:01:00
+ * @author xiyou
+ * RPC的客户端
+ * 主要目的是接受客户端的情况，打开一个socket
+ * 通过反射调用，把结果封装成对象序列化传输给客户端
  */
 public class RpcServer {
     private ExecutorService threadPool;
@@ -34,7 +37,7 @@ public class RpcServer {
      */
     public void register(Object service, int port) {
         if (null == service) {
-            logger.error(RpcErrorMessageEnum.SERVICE_CAN_NOT_BE_NULL.getMessage(),service.getClass());
+            logger.error(RpcErrorMessageEnum.SERVICE_CAN_NOT_BE_NULL.getMessage(), service.getClass());
             throw new RpcException(RpcErrorMessageEnum.SERVICE_CAN_NOT_BE_NULL);
         }
         try (ServerSocket server = new ServerSocket(port);) {

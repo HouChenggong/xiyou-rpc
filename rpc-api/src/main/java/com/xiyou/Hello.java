@@ -2,11 +2,11 @@ package com.xiyou;
 
 import java.io.Serializable;
 
-/**
- * @author shuang.kou
- * @createTime 2020年05月10日 07:04:00
- */
 
+
+/**
+ * @author xiyou
+ */
 public class Hello implements Serializable {
     private String message;
     private String description;

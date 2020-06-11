@@ -3,9 +3,9 @@ package com.xiyou;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 07:52:00
+ * @author xiyou
  */
 public class HelloServiceImpl implements HelloService {
     private static final Logger logger = LoggerFactory.getLogger(HelloServiceImpl.class);

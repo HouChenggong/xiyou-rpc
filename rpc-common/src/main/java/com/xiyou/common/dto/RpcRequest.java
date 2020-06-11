@@ -5,9 +5,10 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月10日 08:24:00
+ * @author xiyou
+ * 请求对象的封装
  */
 @Data
 @Builder

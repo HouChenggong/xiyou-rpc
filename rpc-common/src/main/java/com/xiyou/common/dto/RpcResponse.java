@@ -5,9 +5,10 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
- * @author shuang.kou
- * @createTime 2020年05月12日 16:15:00
+ * @author xiyou
+ * 对RPC结果调用的封装
  */
 @Data
 public class RpcResponse<T> implements Serializable {
@@ -41,7 +42,8 @@ public class RpcResponse<T> implements Serializable {
         response.setMessage(rpcResponseCode.getMessage());
         return response;
     }
-    public static <T> RpcResponse<T> fail(int code,String msg  ) {
+
+    public static <T> RpcResponse<T> fail(int code, String msg) {
         RpcResponse<T> response = new RpcResponse<>();
         response.setCode(code);
         response.setMessage(msg);
