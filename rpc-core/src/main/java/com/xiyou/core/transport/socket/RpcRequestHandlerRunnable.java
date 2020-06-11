@@ -1,9 +1,9 @@
-package com.xiyou.core.remote.socket;
+package com.xiyou.core.transport.socket;
 
 import com.xiyou.common.dto.RpcRequest;
 import com.xiyou.common.dto.RpcResponse;
 import com.xiyou.core.registry.ServiceRegistry;
-import com.xiyou.core.remote.RpcRequestHandler;
+import com.xiyou.core.transport.RpcRequestHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

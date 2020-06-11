@@ -1,4 +1,4 @@
-package com.xiyou.core.remote.socket;
+package com.xiyou.core.transport.socket;
 
 import com.xiyou.common.dto.RpcRequest;
 import com.xiyou.common.dto.RpcResponse;
@@ -19,8 +19,8 @@ import java.net.Socket;
  * RPC客户端发送请求并接受请求
  * 对异常做特殊处理
  */
-public class RpcClient {
-    public static final Logger logger = LoggerFactory.getLogger(RpcClient.class);
+public class SocketRpcClient {
+    public static final Logger logger = LoggerFactory.getLogger(SocketRpcClient.class);
 
     public Object sendRpcRequest(RpcRequest rpcRequest, String host, int port) {
         try (Socket socket = new Socket(host, port)) {

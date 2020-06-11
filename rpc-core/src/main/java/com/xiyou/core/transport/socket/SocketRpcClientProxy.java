@@ -1,7 +1,8 @@
-package com.xiyou.core.remote.socket;
+package com.xiyou.core.transport.socket;
 
 
 import com.xiyou.common.dto.RpcRequest;
+import com.xiyou.core.transport.socket.SocketRpcClient;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,11 +14,11 @@ import java.lang.reflect.Proxy;
  * 客户端JDK动态代理对象
  * 主要目的是生成每一个IService接口的Proxy对象
  */
-public class RpcClientProxy implements InvocationHandler {
+public class SocketRpcClientProxy implements InvocationHandler {
     private String host;
     private int port;
 
-    public RpcClientProxy(String host, int port) {
+    public SocketRpcClientProxy(String host, int port) {
         this.host = host;
         this.port = port;
     }
@@ -34,7 +35,7 @@ public class RpcClientProxy implements InvocationHandler {
                 .interfaceName(method.getDeclaringClass().getName())
                 .paramTypes(method.getParameterTypes())
                 .build();
-        RpcClient rpcClient = new RpcClient();
-        return rpcClient.sendRpcRequest(rpcRequest, host, port);
+        SocketRpcClient socketRpcClient = new SocketRpcClient();
+        return socketRpcClient.sendRpcRequest(rpcRequest, host, port);
     }
 }

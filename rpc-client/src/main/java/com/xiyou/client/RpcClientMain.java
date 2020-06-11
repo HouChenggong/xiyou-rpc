@@ -3,7 +3,7 @@ package com.xiyou.client;
 import com.xiyou.Hello;
 import com.xiyou.HelloService;
 import com.xiyou.ISayHello;
-import com.xiyou.core.remote.socket.RpcClientProxy;
+import com.xiyou.core.transport.socket.SocketRpcClientProxy;
 
 /**
  * @author xiyou
@@ -12,11 +12,11 @@ import com.xiyou.core.remote.socket.RpcClientProxy;
  */
 public class RpcClientMain {
     public static void main(String[] args) {
-        RpcClientProxy rpcClientProxy = new RpcClientProxy("127.0.0.1", 9999);
-        HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
+        SocketRpcClientProxy socketRpcClientProxy = new SocketRpcClientProxy("127.0.0.1", 9999);
+        HelloService helloService = socketRpcClientProxy.getProxy(HelloService.class);
         String hello = helloService.hello(new Hello("111", "222"));
         System.out.println(hello);
-        ISayHello sayHello = rpcClientProxy.getProxy(ISayHello.class);
+        ISayHello sayHello = socketRpcClientProxy.getProxy(ISayHello.class);
         String sayHelloRes = sayHello.sayHello( "I am xiyou");
         System.out.println(sayHelloRes);
     }

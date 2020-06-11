@@ -1,4 +1,4 @@
-package com.xiyou.core.remote;
+package com.xiyou.core.transport;
 
 
 import com.xiyou.common.dto.RpcRequest;
