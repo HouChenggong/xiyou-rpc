@@ -1,4 +1,4 @@
-package com.xiyou.core;
+package com.xiyou.core.remote.socket;
 
 import com.xiyou.common.dto.RpcRequest;
 import com.xiyou.common.dto.RpcResponse;

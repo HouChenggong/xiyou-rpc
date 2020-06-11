@@ -1,6 +1,7 @@
 package com.xiyou;
 
-import com.xiyou.core.RpcServer;
+import com.xiyou.core.registry.DefaultServiceRegistry;
+import com.xiyou.core.remote.socket.RpcServer;
 
 /**
  * @author xiyou
@@ -10,8 +11,11 @@ import com.xiyou.core.RpcServer;
  */
 public class RpcServerMain {
     public static void main(String[] args) {
-        HelloService helloService = new HelloServiceImpl();
-        RpcServer rpcServer = new RpcServer();
-        rpcServer.register(helloService, 9999);
+        HelloServiceImpl helloService = new HelloServiceImpl();
+        DefaultServiceRegistry defaultServiceRegistry = new DefaultServiceRegistry();
+        // 手动注册
+        defaultServiceRegistry.register(helloService);
+        RpcServer rpcServer = new RpcServer(defaultServiceRegistry);
+        rpcServer.start(9999);
     }
 }

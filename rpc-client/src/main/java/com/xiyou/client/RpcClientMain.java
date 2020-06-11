@@ -3,7 +3,7 @@ package com.xiyou.client;
 import com.xiyou.Hello;
 import com.xiyou.HelloService;
 import com.xiyou.ISayHello;
-import com.xiyou.core.RpcClientProxy;
+import com.xiyou.core.remote.socket.RpcClientProxy;
 
 /**
  * @author xiyou
