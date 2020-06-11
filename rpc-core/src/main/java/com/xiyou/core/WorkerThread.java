@@ -1,6 +1,6 @@
 package com.xiyou.core;
 
-import com.xiyou.common.RpcRequest;
+import com.xiyou.common.dto.RpcRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

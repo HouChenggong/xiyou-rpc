@@ -1,4 +1,4 @@
-package com.xiyou.common;
+package com.xiyou.common.dto;
 
 import lombok.Builder;
 import lombok.Data;

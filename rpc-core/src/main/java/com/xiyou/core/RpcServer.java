@@ -1,5 +1,7 @@
 package com.xiyou.core;
 
+import com.xiyou.common.enumres.RpcErrorMessageEnum;
+import com.xiyou.common.exception.RpcException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,12 +33,16 @@ public class RpcServer {
      * TODO 修改为注解然后扫描
      */
     public void register(Object service, int port) {
+        if (null == service) {
+            logger.error(RpcErrorMessageEnum.SERVICE_CAN_NOT_BE_NULL.getMessage(),service.getClass());
+            throw new RpcException(RpcErrorMessageEnum.SERVICE_CAN_NOT_BE_NULL);
+        }
         try (ServerSocket server = new ServerSocket(port);) {
             logger.info("server starts...");
             Socket socket;
             while ((socket = server.accept()) != null) {
                 logger.info("client connected");
-                threadPool.execute(new WorkerThread(socket, service));
+                threadPool.execute(new ClientMessageHandlerThread(socket, service));
             }
         } catch (IOException e) {
             logger.error("occur IOException:", e);

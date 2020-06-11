@@ -2,6 +2,7 @@ package com.xiyou.client;
 
 import com.xiyou.Hello;
 import com.xiyou.HelloService;
+import com.xiyou.ISayHello;
 import com.xiyou.core.RpcClientProxy;
 
 /**
@@ -15,5 +16,8 @@ public class RpcClientMain {
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
         String hello = helloService.hello(new Hello("111", "222"));
         System.out.println(hello);
+        ISayHello sayHello = rpcClientProxy.getProxy(ISayHello.class);
+        String sayHelloRes = sayHello.sayHello( "I am xiyou");
+        System.out.println(sayHelloRes);
     }
 }

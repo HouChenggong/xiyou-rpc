@@ -1,7 +1,7 @@
 package com.xiyou.core;
 
 
-import com.xiyou.common.RpcRequest;
+import com.xiyou.common.dto.RpcRequest;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
